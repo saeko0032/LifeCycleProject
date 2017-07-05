@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +21,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Log.d(msg,"The oncreate method()");
+        Log.d(msg,"The onCreate method()");
+        TextView t = new TextView(this);
+        t=(TextView)findViewById(R.id.test);
+        t.setText("Define text lalala");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -35,7 +39,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
         Log.d(msg,"The onStart method()");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(msg,"The onRestart method()");
     }
 
     @Override
@@ -61,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         Log.d(msg,"The onDestroy method()");
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
