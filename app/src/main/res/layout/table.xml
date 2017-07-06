@@ -1,58 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:stretchColumns="1">
+    android:layout_height="match_parent">
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/txt1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_column="1"
-            android:text="Time for table layout" />
+            android:text="Time for Table Layout"
+            android:layout_column="1"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="CLICK HERE"
             android:layout_column="2"
-            android:text="click here" />
+            android:layout_span="2"
+            />
+
     </TableRow>
 
     <TableRow
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/txt2"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_column="1"
-            android:layout_span="2"
-            android:text="Time for table layout" />
+            android:text="Time for Table Layout"
+            android:layout_column="1"/>
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_column="2"
-            android:text="click here" />
+            android:text="CLICK HERE"
+            android:layout_column="2"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CLICK HERE 2"
+            android:layout_column="3"/>
 
     </TableRow>
-
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/txt3"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Time for Table Layout"
             android:layout_column="1"
-            android:layout_span="4"
-            android:text="Time for table layout" />
-
+            android:layout_span="3"/>
     </TableRow>
+
+
 </TableLayout>
