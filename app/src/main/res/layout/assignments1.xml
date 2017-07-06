@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
@@ -9,9 +10,9 @@
 
         <TextView
             android:id="@+id/asText1"
-            android:layout_width="0dp"
-            android:layout_height="237dp"
             android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:background="@color/darkRed"
             android:gravity="center_vertical"
             android:text="A"
@@ -20,9 +21,9 @@
 
         <TextView
             android:id="@+id/asText2"
-            android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="B"
             android:textSize="15sp"
             android:textAlignment="center"
@@ -35,20 +36,20 @@
 
         <TextView
             android:id="@+id/asText3"
-            android:layout_width="0dp"
-            android:layout_height="275dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/darkGreen"
+            android:gravity="center_vertical"
             android:text="C"
             android:textAlignment="center"
-            android:gravity="center_vertical"
             android:textSize="15sp" />
 
         <TextView
             android:id="@+id/asText4"
-            android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="D"
             android:textSize="15sp"
             android:textAlignment="center"

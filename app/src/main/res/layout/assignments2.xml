@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/darkRed">
+    <TextView
+    android:id="@+id/asText1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/darkGreen"
+    android:gravity="center_vertical"
+    android:text="I'm in this corner"
+    android:textAlignment="center"
+    android:textSize="15sp" />
+    <TextView
+        android:id="@+id/asText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/darkGreen"
+        android:gravity="center_vertical"
+        android:text="No, up here"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        />
+    <TextView
+        android:id="@+id/asText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/darkGreen"
+        android:gravity="center_vertical"
+        android:text="Wait, upim here"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        android:layout_alignParentleft="true"
+        android:layout_alignParentBottom="true"
+        />
+    <TextView
+        android:id="@+id/asText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/darkGreen"
+        android:gravity="center_vertical"
+        android:text="Actuallyim here"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        />
+</RelativeLayout>
