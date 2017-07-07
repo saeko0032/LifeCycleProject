@@ -29,12 +29,22 @@ public class IntentexampleB extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                String url = "http://www.stackoverflow.com";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
-                //  Intent i = new Intent(IntentexampleB.this,IntentexampleA.class);
-                //  startActivity(i);
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/html");
+                intent.putExtra(Intent.EXTRA_EMAIL,new String[]{"saeko0032@gmail.com"});
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
+                intent.putExtra(Intent.EXTRA_TEXT, "Message dayo.");
+
+                startActivity(Intent.createChooser(intent, "Send Email"));
+                // go to web page
+                // String url = "http://www.stackoverflow.com";
+                // Intent i = new Intent(Intent.ACTION_VIEW);
+                // i.setData(Uri.parse(url));
+                //startActivity(i);
+
+                // go back screenA
+                // Intent i = new Intent(IntentexampleB.this,IntentexampleA.class);
+                // startActivity(i);
             }
         });
     }
