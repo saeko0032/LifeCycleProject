@@ -17,13 +17,18 @@
 
         <activity android:name=".IntentexampleA"
             android:label="Activity A">
+
+        </activity>
+        <activity android:name=".IntentexampleB"
+            android:label="Activity B">
+        </activity>
+
+        <activity android:name=".ScoreCounter"
+            android:label="Activity Score">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".IntentexampleB"
-            android:label="Activity B">
         </activity>
     </application>
 

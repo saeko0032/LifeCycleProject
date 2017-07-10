@@ -27,8 +27,8 @@ public class ScoreCounter extends AppCompatActivity {
     int scoreBValue;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.point);
         scoreAValue = 0;
         scoreBValue = 0;
@@ -47,7 +47,7 @@ public class ScoreCounter extends AppCompatActivity {
            @Override
             public void onClick(View view) {
                scoreAValue = scoreAValue + 3;
-               displayScoreValue(scoreAValue);
+               displayScoreValue();
            }
         });
 
@@ -55,7 +55,7 @@ public class ScoreCounter extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 scoreAValue = scoreAValue + 2;
-                displayScoreValue(scoreAValue);
+                displayScoreValue();
             }
         });
 
@@ -63,7 +63,7 @@ public class ScoreCounter extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 scoreAValue = scoreAValue + 1;
-                displayScoreValue(scoreAValue);
+                displayScoreValue();
             }
         });
 
@@ -71,7 +71,7 @@ public class ScoreCounter extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 scoreBValue = scoreBValue + 3;
-                displayScoreValue(scoreBValue);
+                displayScoreValue();
             }
         });
 
@@ -79,7 +79,7 @@ public class ScoreCounter extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 scoreBValue = scoreBValue + 2;
-                displayScoreValue(scoreBValue);
+                displayScoreValue();
             }
         });
 
@@ -87,7 +87,7 @@ public class ScoreCounter extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 scoreBValue = scoreBValue + 1;
-                displayScoreValue(scoreBValue);
+                displayScoreValue();
             }
         });
 
@@ -95,16 +95,15 @@ public class ScoreCounter extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 scoreAValue = 0;
-                displayScoreValue(scoreAValue);
                 scoreBValue = 0;
-                displayScoreValue(scoreBValue);
+                displayScoreValue();
             }
         });
     }
 
-    public void displayScoreValue(int score) {
-        scoreATextView.setText(score);
-        scoreBTextView.setText(score);
+    public void displayScoreValue() {
+        scoreATextView.setText("" + scoreAValue);
+        scoreBTextView.setText("" + scoreBValue);
 
     }
 }
