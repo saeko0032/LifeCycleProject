@@ -40,6 +40,7 @@ public class IntentexampleA extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
     }
 
 

@@ -25,6 +25,10 @@
 
         <activity android:name=".ScoreCounter"
             android:label="Activity Score">
+        </activity>
+
+        <activity android:name=".ToastExample"
+            android:label="Toast example">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
