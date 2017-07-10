@@ -23,13 +23,15 @@
     android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/scoreBoard">
-    <TextView
-        android:id="@+id/scoreA"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textAlignment="center"
-        android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/scoreA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/scoreB"
@@ -37,27 +39,31 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="0"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="30sp" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/score3points">
-        <Button
-            android:id="@+id/scoreBtn1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="+1 POINT1"
-            android:textAlignment="center"
-            android:layout_weight="1" />
 
         <Button
-            android:id="@+id/scoreBtn2"
+            android:id="@+id/scoreAPnt3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="+1 POINT"
+            android:backgroundTint="@android:color/holo_orange_light"
+            android:text="+3 POINT1"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/scoreBPnt3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_orange_light"
+            android:text="+3 POINT"
             android:textAlignment="center" />
     </LinearLayout>
     <LinearLayout
@@ -65,19 +71,22 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/score2Points">
-        <Button
-            android:id="@+id/scoreBtn3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="+2 POINTS"
-            android:textAlignment="center"
-            android:layout_weight="1" />
 
         <Button
-            android:id="@+id/scoreBtn4"
+            android:id="@+id/scoreAPnt2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_orange_light"
+            android:text="+2 POINTS"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/scoreBPnt2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_orange_light"
             android:text="+2 POINTS"
             android:textAlignment="center" />
     </LinearLayout>
@@ -86,27 +95,34 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/score1Point">
-        <Button
-            android:id="@+id/scoreBtn5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="+1 POINTS"
-            android:textAlignment="center"
-            android:layout_weight="1" />
 
         <Button
-            android:id="@+id/scoreBtn6"
+            android:id="@+id/scoreAPnt1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_orange_light"
+            android:text="+1 POINTS"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/scoreBPnt1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_orange_light"
             android:text="+1 POINTS"
             android:textAlignment="center" />
     </LinearLayout>
+
     <Button
+        android:id="@+id/btnReset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnReset"
-        android:text="center"
         android:layout_gravity="center_horizontal"
-        />
+        android:backgroundTint="@android:color/holo_orange_light"
+        android:gravity="center_vertical"
+        android:text="center"
+        android:layout_margin="@dimen/fab_margin"
+        style="@style/colorPrimary"/>
 </LinearLayout>
