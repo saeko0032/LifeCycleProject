@@ -35,6 +35,9 @@ public class ToastExample extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pizza);
 
+        sizeStr = "Regular";
+        toppingStr = new StringBuilder();
+
         radioGroup = (RadioGroup) findViewById(R.id.radio);
         toastBtn = (Button) findViewById(R.id.toastBtn);
         toppingStr.append("topping : ");
@@ -51,7 +54,7 @@ public class ToastExample extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Context context = getApplicationContext();
-                String msg = sizeStr + "/n" +toppingStr;
+                String msg = sizeStr + "\n" +toppingStr;
                 int duration = Toast.LENGTH_LONG;
                 Toast t = Toast.makeText(context, msg, duration);
                 t.show();
