@@ -17,18 +17,22 @@
 
         <activity android:name=".IntentexampleA"
             android:label="Activity A">
-
         </activity>
         <activity android:name=".IntentexampleB"
             android:label="Activity B">
         </activity>
-
         <activity android:name=".ScoreCounter"
             android:label="Activity Score">
         </activity>
 
         <activity android:name=".ToastExample"
-            android:label="Toast example">
+            android:label="Pizza Order">
+
+        </activity>
+        <activity android:name=".NormalListViewEx"
+            android:label="list example">
+        </activity>
+        <activity android:name=".MenuExample">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
