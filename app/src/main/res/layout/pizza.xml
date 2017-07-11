@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/colorWhite"
-
+            android:id="@+id/nameText"
             />
     </LinearLayout>
 
@@ -83,7 +83,7 @@
             android:orientation="vertical">
 
             <CheckBox
-                android:id="@+id/checkBox1"
+                android:id="@+id/peperoni"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -92,7 +92,7 @@
                 android:onClick="onCheckboxClicked"/>
 
             <CheckBox
-                android:id="@+id/checkBox2"
+                android:id="@+id/mushroom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -101,16 +101,16 @@
                 android:onClick="onCheckboxClicked" />
 
             <CheckBox
-                android:id="@+id/checkBox3"
+                android:id="@+id/blackOlives"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Black Plives"
+                android:text="Black Olives"
                 android:textAlignment="center"
                 android:onClick="onCheckboxClicked" />
 
             <CheckBox
-                android:id="@+id/checkBox4"
+                android:id="@+id/pinapple"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
