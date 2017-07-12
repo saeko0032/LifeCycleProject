@@ -33,6 +33,8 @@
             android:label="list example">
         </activity>
         <activity android:name=".MenuExample">
+        </activity>
+        <activity android:name=".GridExample">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
