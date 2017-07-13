@@ -46,11 +46,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        if(menu instanceof MenuBuilder){
-            MenuBuilder m = (MenuBuilder) menu;
-            m.setOptionalIconsVisible(true);
-        }
+        getMenuInflater().inflate(R.menu.menuwithicon, menu);
+//        if(menu instanceof MenuBuilder){
+//            MenuBuilder m = (MenuBuilder) menu;
+//            m.setOptionalIconsVisible(true);
+//        }
         return true;
     }
 
@@ -61,16 +61,16 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.settings) {
-            Toast.makeText(this, "setting is clicked",Toast.LENGTH_SHORT).show();
-        } else {
-            Intent i = new Intent(this,IntentexampleB.class);
-            i.putExtra("value","hello");
-            startActivity(i);
-
+        switch (item.getItemId()) {
+            case R.id.menu_delete:
+            case R.id.menu_bookmark:
+            case R.id.menu_save:
+            case R.id.menu_search:
+                if (item.isChecked()) item.setChecked(false);
+                else item.setChecked(true);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-
-        return super.onOptionsItemSelected(item);
     }
 }
