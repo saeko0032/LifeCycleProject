@@ -13,12 +13,7 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-
         <activity android:name=".IntentexampleA"
             android:label="Activity A">
         </activity>
@@ -28,7 +23,6 @@
         <activity android:name=".ScoreCounter"
             android:label="Activity Score">
         </activity>
-
         <activity android:name=".ToastExample"
             android:label="Pizza Order">
         </activity>
@@ -38,7 +32,12 @@
         <activity android:name=".MenuExample">
         </activity>
         <activity android:name=".GridExample">
-
+        </activity>
+        <activity android:name=".ContextMenuExample">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
