@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:id="@+id/group_normal"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_bookmark"
+            android:icon="@drawable/next"
+            android:title="Bookmark"
+            android:checkable="true"
+            app:showAsAction="always"></item>
+        <item
+            android:id="@+id/menu_save"
+            android:icon="@drawable/next"
+            android:title="Save"
+            android:checkable="true"
+            app:showAsAction="always"></item>
+        <item
+            android:id="@+id/menu_search"
+            android:icon="@drawable/next"
+            android:title="Search"
+            android:checkable="true"
+            app:showAsAction="ifRoom|withText"></item>
+    </group>
+    <item
+        android:id="@+id/menu_share"
+        android:icon="@drawable/next"
+        android:title="Share"
+        app:showAsAction="ifRoom|withText"></item>
+    <item
+        android:id="@+id/menu_delete"
+        android:icon="@drawable/next"
+        android:title="Delete"
+        app:showAsAction="ifRoom|withText"></item>
+    <item
+        android:id="@+id/menu_preferences"
+        android:icon="@drawable/next"
+        android:title="Preferences"
+        app:showAsAction="ifRoom|withText"></item>
+</menu>
