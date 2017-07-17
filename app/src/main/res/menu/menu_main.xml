@@ -5,12 +5,10 @@
     <item
         android:id="@+id/settings"
         android:title="@string/action_settings"
-        app:showAsAction="always"
         android:icon="@drawable/next"/>
     <item
         android:id="@+id/search"
         android:title="Search"
-        app:showAsAction="always"
         android:icon="@drawable/sample_0">
     </item>
 </menu>
