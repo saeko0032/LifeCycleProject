@@ -10,24 +10,24 @@ import android.view.ViewGroup;
  * Created by saeko on 7/17/2017.
  */
 
-public class RecyclerAdapter extends RecyclerView.Adapter<NumberViewHolder> {
-    int numberOfItems;
+public class RecyclerAdapter extends RecyclerView.Adapter<NumberViewHolderExample> {
+    private int numberOfItems;
 
     RecyclerAdapter(int numberOfItems) {
-            this.numberOfItems = numberOfItems;
+        this.numberOfItems = numberOfItems;
     }
 
     @Override
-    public NumberViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public NumberViewHolderExample onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.recycler_number_list_item, parent, false);
-        NumberViewHolder viewHolder = new NumberViewHolder(view);
+        NumberViewHolderExample viewHolder = new NumberViewHolderExample(view);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(NumberViewHolder holder, int position) {
+    public void onBindViewHolder(NumberViewHolderExample holder, int position) {
         holder.bind(position);
     }
 
@@ -35,4 +35,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<NumberViewHolder> {
     public int getItemCount() {
         return this.numberOfItems;
     }
+
+
 }

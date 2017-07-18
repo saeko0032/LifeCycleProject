@@ -27,27 +27,4 @@ public class RecycleActivity extends AppCompatActivity {
         adapter = new RecyclerAdapter(COUNTER);
         recyclerView.setAdapter(adapter);
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.refresh_example_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if(id == R.id.action_settings) {
-            return true;
-
-        } else if (id == R.id.action_refresh) {
-            // Refresh adapter
-            // should create adapter again!!
-            adapter = new RecyclerAdapter(COUNTER);
-            recyclerView.setAdapter(adapter);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }

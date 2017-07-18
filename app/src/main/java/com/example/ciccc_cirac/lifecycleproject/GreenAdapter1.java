@@ -14,23 +14,38 @@ import android.widget.TextView;
 
 // you need to extends innerclass, to access inner class ThisFile.innerclass
 public class GreenAdapter1 extends RecyclerView.Adapter<GreenAdapter1.NumberViewHolder1> {
+    // for list item event, we need to make interface
 
+    final private ListItemClickListener onClickListener;
+    public interface ListItemClickListener {
+        void onListItemClick(int position);
+    }
     private int numberOfItems;
     // constructor
-    public GreenAdapter1(int numberOfItems){
+    public GreenAdapter1(int numberOfItems, ListItemClickListener listener){
         // how many list item do you want to use
         // if 0 to 10 -> should return 10
         this.numberOfItems = numberOfItems;
+        onClickListener = listener;
     }
     // create inner class
-    class NumberViewHolder1 extends RecyclerView.ViewHolder {
+    class NumberViewHolder1 extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView listItemNumbrtView;
-        NumberViewHolder1(View itemViews) {
+
+        public NumberViewHolder1(View itemViews) {
             super(itemViews);
             listItemNumbrtView = (TextView) itemView.findViewById(R.id.list_item_textView);
+            itemView.setOnClickListener((View.OnClickListener) this);
         }
         public void bind(int listIndex){
             listItemNumbrtView.setText(String.valueOf(listIndex));
+        }
+
+
+        @Override
+        public void onClick(View view) {
+            int position = getAdapterPosition();
+            onClickListener.onListItemClick(position);
         }
     }
 
