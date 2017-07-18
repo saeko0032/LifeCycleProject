@@ -41,7 +41,6 @@ public class GreenAdapter1 extends RecyclerView.Adapter<GreenAdapter1.NumberView
             listItemNumbrtView.setText(String.valueOf(listIndex));
         }
 
-
         @Override
         public void onClick(View view) {
             int position = getAdapterPosition();
