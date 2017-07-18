@@ -29,7 +29,6 @@ public class ListViewActivity extends AppCompatActivity {
                 switch(position) {
                     case 0:
                         i = new Intent(ListViewActivity.this,FrameLayoutActivity.class);
-                        //i.putExtra("value",editTxt1.getText().toString());
                         startActivity(i);
                         break;
                     case 1:
@@ -38,7 +37,7 @@ public class ListViewActivity extends AppCompatActivity {
                         startActivity(i);
                         break;
                     case 2:
-                        i = new Intent(ListViewActivity.this,RelativeLayoutActivity.class);
+                        i = new Intent(ListViewActivity.this,RelaytiveLayoutActivity.class);
                         //i.putExtra("value",editTxt1.getText().toString());
                         startActivity(i);
                         break;
@@ -48,7 +47,7 @@ public class ListViewActivity extends AppCompatActivity {
                         startActivity(i);
                         break;
                     case 4:
-                        i = new Intent(ListViewActivity.this,ListViewActivity.class);
+                        i = new Intent(ListViewActivity.this,ListViewActivity2.class);
                         //i.putExtra("value",editTxt1.getText().toString());
                         startActivity(i);
                         break;
