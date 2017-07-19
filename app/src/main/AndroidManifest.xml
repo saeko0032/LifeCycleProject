@@ -42,10 +42,6 @@
         <activity android:name=".RecycleActivity">
         </activity>
         <activity android:name=".ListViewActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".FrameLayoutActivity">
         </activity>
@@ -62,6 +58,10 @@
         <activity android:name=".RecyclerViewActivity">
         </activity>
         <activity android:name=".MovieActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 </manifest>

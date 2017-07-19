@@ -3,6 +3,9 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:paddingLeft="16sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="RELATIVE LAYOUT"/>
@@ -10,11 +13,14 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/whole_margin"
         android:text="RelativeLayout is a view group that displays child views in relative positions. The position of each view can be specified as relative to sibling elements (such as to the left-of or below another view) or in positions relative to the parent RelativeLayout area (such as aligned to the bottom, left or center)."/>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="319dp"
+        android:paddingLeft="@dimen/for_16"
+        android:paddingRight="@dimen/for_16"
         android:src="@drawable/relative_ex" />
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,6 +30,7 @@
             android:id="@+id/relative_btn_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Home"/>
 
         <Button
@@ -32,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:text="Next"
+            android:layout_weight="1"
             android:layout_gravity="right"/>
     </LinearLayout>
 </LinearLayout>

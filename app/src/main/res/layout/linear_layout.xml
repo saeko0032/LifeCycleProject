@@ -3,6 +3,9 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:paddingLeft="16sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="LINEAR LAYOUT"/>
@@ -10,11 +13,14 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/whole_margin"
         android:text="LinearLayout is a view group that aligns all children in a single direction, vertically or horizontally. You can specify the layout direction with the android:orientation attribute."/>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="319dp"
+        android:paddingLeft="@dimen/for_16"
+        android:paddingRight="@dimen/for_16"
         android:src="@drawable/linear_ex" />
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,6 +30,7 @@
             android:id="@+id/linear_btn_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Home"/>
 
         <Button
@@ -31,6 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_weight="1"
             android:text="Next"
             android:layout_gravity="right"/>
     </LinearLayout>

@@ -3,6 +3,9 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:paddingLeft="16sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Recycler View"/>
@@ -10,11 +13,14 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Many apps need to display user-interface elements based on large data sets, or data that frequently changes. For example, a music app might need to display information about thousands of albums, but only a dozen of those albums might be on-screen at a time. If the app created UI widgets for each of those albums, the app would end up using a lot of memory and storage, potentially making the app slow and crash-prone."/>
+        android:layout_margin="@dimen/whole_margin"
+        android:text="Many apps need to display user-interface elements based on large data sets, or data that frequently changes. For example, a music app might need to display information about thousands of albums, but only a dozen of those albums might be on-screen at a time."/>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="319dp"
+        android:paddingLeft="@dimen/for_16"
+        android:paddingRight="@dimen/for_16"
         android:src="@drawable/recycler_ex" />
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,6 +30,7 @@
             android:id="@+id/recycler_btn_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Home"/>
 
         <Button
@@ -31,6 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_weight="1"
             android:text="Next"
             android:layout_gravity="right"/>
     </LinearLayout>

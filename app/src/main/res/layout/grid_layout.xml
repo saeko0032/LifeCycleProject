@@ -3,6 +3,9 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:paddingLeft="16sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="GRID VIEW"/>
@@ -10,11 +13,14 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/whole_margin"
         android:text="GridView is a ViewGroup that displays items in a two-dimensional, scrollable grid. The grid items are automatically inserted to the layout using a ListAdapter.For an introduction to how you can dynamically insert views using an adapter, read Building Layouts with an Adapter."/>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="319dp"
+        android:paddingLeft="@dimen/for_16"
+        android:paddingRight="@dimen/for_16"
         android:src="@drawable/grid_ex" />
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,6 +30,7 @@
             android:id="@+id/grid_btn_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Home"/>
 
         <Button
@@ -32,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:text="Next"
+            android:layout_weight="1"
             android:layout_gravity="right"/>
     </LinearLayout>
 </LinearLayout>
