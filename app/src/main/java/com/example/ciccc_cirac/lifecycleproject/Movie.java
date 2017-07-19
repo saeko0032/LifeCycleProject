@@ -6,12 +6,12 @@ package com.example.ciccc_cirac.lifecycleproject;
 
 public class Movie {
     private String title;
-    private String rate;
-    private int year;
+    private String genere;
+    private String year;
 
-    Movie(String title, String rate, int year){
+    Movie(String title, String genere, String year){
         this.title = title;
-        this.rate = rate;
+        this.genere = genere;
         this.year = year;
     }
 
@@ -19,9 +19,12 @@ public class Movie {
         this.title = title;
     }
     public void setRate(String rate) {
-        this.rate = rate;
+        this.genere = genere;
     }
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
+    public String getTitle() { return this.title; }
+    public String getGenere() { return this.genere; }
+    public String getYear() { return this.year; }
 }
