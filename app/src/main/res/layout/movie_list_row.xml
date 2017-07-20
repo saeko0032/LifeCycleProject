@@ -45,17 +45,17 @@
                         android:text="MOVIE TITLE"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:layout_weight="1.10" />
+                        android:layout_weight="1.01" />
 
                     <CheckBox
                         android:id="@+id/checkBox"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="right"
-                        android:textAlignment="viewEnd"
                         android:gravity="right|center_vertical"
                         android:onClick="oCheckBoxPressed"
-                        android:text="" />
+                        android:text=""
+                        android:textAlignment="viewEnd" />
                 </LinearLayout>
 
                 <TextView

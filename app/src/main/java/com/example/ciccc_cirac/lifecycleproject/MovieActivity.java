@@ -6,7 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +22,9 @@ public class MovieActivity extends AppCompatActivity {
     List<Movie> movieList;
     private MovieAdapter adapter;
     private RecyclerView recyclerView;
+    private Button clearBtn;
+    private Button selectBtn;
+    private Button deleteBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,12 +34,55 @@ public class MovieActivity extends AppCompatActivity {
         prepareMovieData();
 
         recyclerView = (RecyclerView) findViewById(R.id.movie_recycle_view);
+
+        clearBtn = (Button) findViewById(R.id.clear_btn_movie);
+        selectBtn = (Button) findViewById(R.id.select_btn_movie);
+        deleteBtn = (Button) findViewById(R.id.delete_btn_movie);
+
+        // change checkbox's status
+        clearBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                setFadeAnimation(view);
+                Toast.makeText(getApplicationContext(),"test",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // change checkbox's status
+        selectBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                setFadeAnimation(view);
+                Toast.makeText(getApplicationContext(),"test",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // check movi_list_ischecked status -> if checked delete and refresh it
+        deleteBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                setFadeAnimation(view);
+                Toast.makeText(getApplicationContext(),"test",Toast.LENGTH_SHORT).show();
+            }
+        });
+
         LinearLayoutManager linearMng = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearMng);
         adapter = new MovieAdapter(movieList);
         recyclerView.setAdapter(adapter);
 
     }
+
+    private void setFadeAnimation(View view) {
+
+        AlphaAnimation anim = new AlphaAnimation(0.0f, 1.0f);
+
+        anim.setDuration(1000);
+
+        view.startAnimation(anim);
+
+    }
+
     public void prepareMovieData() {
         // 1
         Movie movie = new Movie("Mad Max: Fury Road", "Action & Adventure", "2015", R.drawable.movie1);
