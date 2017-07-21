@@ -1,5 +1,6 @@
 package com.example.ciccc_cirac.lifecycleproject;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -43,6 +44,11 @@ public class MovieActivity extends AppCompatActivity {
         clearBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                for(Movie movie: movieList) {
+                    movie.setIsChecked(false);
+                }
+                // we need to tell it to adapter
+                adapter.notifyDataSetChanged();
                 setFadeAnimation(view);
                 Toast.makeText(getApplicationContext(),"test",Toast.LENGTH_SHORT).show();
             }
@@ -52,6 +58,11 @@ public class MovieActivity extends AppCompatActivity {
         selectBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                for(Movie movie: movieList) {
+                    movie.setIsChecked(true);
+                }
+                // we need to tell it to adapter
+                adapter.notifyDataSetChanged();
                 setFadeAnimation(view);
                 Toast.makeText(getApplicationContext(),"test",Toast.LENGTH_SHORT).show();
             }
@@ -61,6 +72,17 @@ public class MovieActivity extends AppCompatActivity {
         deleteBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                 for( int i = 0; i < movieList.size(); i++) {
+                     if(movieList.get(i).getIsChecked()) {
+                         movieList.remove(movieList.get(i));
+                     }
+                 }
+//                for(Movie movie: movieList) {
+//                    if(movie.getIsChecked()) {
+//                        movieList.remove(movie);
+//                    }
+//                }
+                adapter.notifyDataSetChanged();
                 setFadeAnimation(view);
                 Toast.makeText(getApplicationContext(),"test",Toast.LENGTH_SHORT).show();
             }
@@ -73,14 +95,22 @@ public class MovieActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        // Checks the orientation of the screen
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            adapter.notifyDataSetChanged();
+        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+            adapter.notifyDataSetChanged();
+        }
+    }
+
     private void setFadeAnimation(View view) {
-
         AlphaAnimation anim = new AlphaAnimation(0.0f, 1.0f);
-
         anim.setDuration(1000);
-
         view.startAnimation(anim);
-
     }
 
     public void prepareMovieData() {

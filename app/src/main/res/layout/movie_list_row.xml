@@ -48,7 +48,7 @@
                         android:layout_weight="1.01" />
 
                     <CheckBox
-                        android:id="@+id/checkBox"
+                        android:id="@+id/movie_select_checkbox"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="right"

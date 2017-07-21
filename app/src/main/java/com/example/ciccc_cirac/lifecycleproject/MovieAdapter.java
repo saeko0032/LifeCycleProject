@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +33,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MoviewNumber
         TextView movieGenreView;
         TextView movieYearView;
         ImageView movieImageView;
+        CheckBox movieCheckbox;
 
         MoviewNumberViewHolder(View itemViews) {
             super(itemViews);
@@ -39,12 +41,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MoviewNumber
             movieTitleView = (TextView) itemView.findViewById(R.id.movie_title_textview);
             movieGenreView = (TextView) itemView.findViewById(R.id.movie_genre_textview);
             movieYearView = (TextView) itemView.findViewById(R.id.movie_years_textView);
+            movieCheckbox = (CheckBox) itemView.findViewById(R.id.movie_select_checkbox);
         }
         public void bind(int listIndex) {
             movieImageView.setImageResource(movie_list.get(listIndex).getImgSrc());
             movieTitleView.setText(String.valueOf(movie_list.get(listIndex).getTitle()));
             movieGenreView.setText(String.valueOf(movie_list.get(listIndex).getGenre()));
             movieYearView.setText(String.valueOf(movie_list.get(listIndex).getYear()));
+            movieCheckbox.setChecked(movie_list.get(listIndex).getIsChecked());
         }
     }
 
@@ -58,7 +62,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MoviewNumber
     }
 
     @Override
-    public void onBindViewHolder(MoviewNumberViewHolder holder, int position) {
+    public void onBindViewHolder(MoviewNumberViewHolder holder, final int position) {
         holder.bind(position);
         holder.movieImageView.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -76,6 +80,20 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MoviewNumber
             @Override
             public void onClick(View view) {
 
+            }
+        });
+
+        holder.movieCheckbox.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                boolean checked = ((CheckBox) view).isChecked();
+                //CheckBox tempCheck = (CheckBox)findViewById(view.getId());
+
+                if(checked) {
+                    movie_list.get(position).setIsChecked(true);
+                } else {
+                    movie_list.get(position).setIsChecked(false);
+                }
             }
         });
 
