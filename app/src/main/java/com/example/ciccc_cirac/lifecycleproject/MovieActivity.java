@@ -13,6 +13,7 @@ import android.widget.CheckBox;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -60,6 +61,7 @@ public class MovieActivity extends AppCompatActivity {
                 for(Movie movie: movieList) {
                     movie.setIsChecked(true);
                 }
+
                 // we need to tell it to adapter
                 adapter.notifyDataSetChanged();
                 setFadeAnimation(view);
@@ -70,16 +72,12 @@ public class MovieActivity extends AppCompatActivity {
         deleteBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                 for( int i = 0; i < movieList.size(); i++) {
+
+                 for( int i = movieList.size() - 1; i >= 0; i--) {
                      if(movieList.get(i).getIsChecked()) {
-                         movieList.remove(movieList.get(i));
+                         movieList.remove(i);
                      }
                  }
-//                for(Movie movie: movieList) {
-//                    if(movie.getIsChecked()) {
-//                        movieList.remove(movie);
-//                    }
-//                }
                 adapter.notifyDataSetChanged();
                 setFadeAnimation(view);
             }
