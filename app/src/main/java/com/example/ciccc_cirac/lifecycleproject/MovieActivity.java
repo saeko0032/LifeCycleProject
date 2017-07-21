@@ -50,7 +50,6 @@ public class MovieActivity extends AppCompatActivity {
                 // we need to tell it to adapter
                 adapter.notifyDataSetChanged();
                 setFadeAnimation(view);
-                Toast.makeText(getApplicationContext(),"test",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -64,7 +63,6 @@ public class MovieActivity extends AppCompatActivity {
                 // we need to tell it to adapter
                 adapter.notifyDataSetChanged();
                 setFadeAnimation(view);
-                Toast.makeText(getApplicationContext(),"test",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -84,7 +82,6 @@ public class MovieActivity extends AppCompatActivity {
 //                }
                 adapter.notifyDataSetChanged();
                 setFadeAnimation(view);
-                Toast.makeText(getApplicationContext(),"test",Toast.LENGTH_SHORT).show();
             }
         });
 
