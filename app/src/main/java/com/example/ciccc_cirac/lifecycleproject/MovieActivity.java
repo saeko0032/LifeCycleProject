@@ -6,11 +6,21 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
+
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonArrayRequest;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -21,31 +31,32 @@ import java.util.List;
  */
 
 public class MovieActivity extends AppCompatActivity {
-    List<Movie> movieList;
+    private static String TAG = MainActivity.class.getSimpleName();
+    List<Movie> movieList = new ArrayList<>();
     private MovieAdapter adapter;
     private RecyclerView recyclerView;
     private Button clearBtn;
     private Button selectBtn;
     private Button deleteBtn;
+    private String jsonURL = "http://192.168.13.2/kamban/moviedata.json";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recycle_movie);
 
-        movieList = new ArrayList<>();
-        prepareMovieData();
-
+       // prepareMovieData();
         recyclerView = (RecyclerView) findViewById(R.id.movie_recycle_view);
-
+        recyclerView.setHasFixedSize(true);
         clearBtn = (Button) findViewById(R.id.clear_btn_movie);
         selectBtn = (Button) findViewById(R.id.select_btn_movie);
         deleteBtn = (Button) findViewById(R.id.delete_btn_movie);
 
         // change checkbox's status
-        clearBtn.setOnClickListener(new View.OnClickListener(){
+        clearBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                for(Movie movie: movieList) {
+                for (Movie movie : movieList) {
                     movie.setIsChecked(false);
                 }
                 // we need to tell it to adapter
@@ -55,10 +66,10 @@ public class MovieActivity extends AppCompatActivity {
         });
 
         // change checkbox's status
-        selectBtn.setOnClickListener(new View.OnClickListener(){
+        selectBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                for(Movie movie: movieList) {
+                for (Movie movie : movieList) {
                     movie.setIsChecked(true);
                 }
 
@@ -69,15 +80,15 @@ public class MovieActivity extends AppCompatActivity {
         });
 
         // check movi_list_ischecked status -> if checked delete and refresh it
-        deleteBtn.setOnClickListener(new View.OnClickListener(){
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                 for( int i = movieList.size() - 1; i >= 0; i--) {
-                     if(movieList.get(i).getIsChecked()) {
-                         movieList.remove(i);
-                     }
-                 }
+                for (int i = movieList.size() - 1; i >= 0; i--) {
+                    if (movieList.get(i).getIsChecked()) {
+                        movieList.remove(i);
+                    }
+                }
                 adapter.notifyDataSetChanged();
                 setFadeAnimation(view);
             }
@@ -86,8 +97,8 @@ public class MovieActivity extends AppCompatActivity {
         LinearLayoutManager linearMng = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearMng);
         adapter = new MovieAdapter(movieList);
-        recyclerView.setAdapter(adapter);
-
+        //recyclerView.setAdapter(adapter);
+        loadJsonData();
     }
 
     @Override
@@ -97,7 +108,7 @@ public class MovieActivity extends AppCompatActivity {
         // Checks the orientation of the screen
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             adapter.notifyDataSetChanged();
-        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
             adapter.notifyDataSetChanged();
         }
     }
@@ -108,6 +119,42 @@ public class MovieActivity extends AppCompatActivity {
         view.startAnimation(anim);
     }
 
+    public void loadJsonData() {
+        JsonArrayRequest req = new JsonArrayRequest(jsonURL,
+                new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                Log.d(TAG, response.toString());
+                try {
+                    Movie movieData = null;
+                    for (int i = 0; i < response.length(); i++) {
+                        movieData = new Movie();
+                        JSONObject movie = (JSONObject) response.get(i);
+                        String title = movie.getString("title");
+                        String genre = movie.getString("genre");
+                        String year = movie.getString("year");
+                        movieData.setTitle(title);
+                        movieData.setYear(year);
+                        movieData.setGenre(genre);
+                        movieList.add(movieData);
+                    }
+                    adapter = new MovieAdapter(movieList);
+                    recyclerView.setAdapter(adapter);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG, "error: " + error.getMessage());
+                Toast.makeText(getApplicationContext(),
+                        error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        AppController.getInstance().addToRequestQueue(req);
+    }
+/*
     public void prepareMovieData() {
         // 1
         Movie movie = new Movie("Mad Max: Fury Road", "Action & Adventure", "2015", R.drawable.movie1);
@@ -143,5 +190,5 @@ public class MovieActivity extends AppCompatActivity {
         movie = new Movie("Forest Gump", "Comedy & Romance", "1994", R.drawable.movie11);
         movieList.add(movie);
     }
-
+*/
 }

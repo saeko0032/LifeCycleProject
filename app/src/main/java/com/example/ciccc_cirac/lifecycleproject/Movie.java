@@ -1,5 +1,7 @@
 package com.example.ciccc_cirac.lifecycleproject;
 
+import java.io.Serializable;
+
 /**
  * Created by saeko on 7/18/2017.
  */
@@ -11,6 +13,7 @@ public class Movie {
     private int imgSrc;
     private boolean isChecked;
 
+    /*
     Movie(String title, String genre, String year, int imgScr){
         this.title = title;
         this.genre = genre;
@@ -18,11 +21,19 @@ public class Movie {
         this.imgSrc = imgScr;
         this.isChecked = false;
     }
+*/
+    public Movie() {
+        this.title = "";
+        this.genre = "";
+        this.year = "";
+        this.imgSrc = R.drawable.movie1;
+        this.isChecked = false;
+    }
 
     public void setTitle(String title) {
         this.title = title;
     }
-    public void setRate(String rate) {
+    public void setGenre(String rate) {
         this.genre = genre;
     }
     public void setYear(String year) {
