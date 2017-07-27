@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -22,6 +24,7 @@ import java.util.Calendar;
 public class DateTimePickerActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
     private TextView timeView;
     private TextView dateView;
+    private Spinner spinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,11 @@ public class DateTimePickerActivity extends AppCompatActivity implements DatePic
 
         timeView = (TextView)findViewById(R.id.time_text);
         dateView = (TextView)findViewById(R.id.date_text);
+        spinner = (Spinner)findViewById(R.id.spinner);
+
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource
+                (this, R.array.placementdates,R.layout.support_simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter1);
     }
 
     //日付変更時に再表示
