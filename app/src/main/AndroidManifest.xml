@@ -66,6 +66,10 @@
             android:configChanges="orientation|screenSize">
         </activity>
         <activity android:name=".DateTimePickerActivity">
+        </activity>
+        <activity android:name=".PreferenceActivity">
+        </activity>
+        <activity android:name=".MainPreferenceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
