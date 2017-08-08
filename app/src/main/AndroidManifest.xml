@@ -2,78 +2,78 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ciccc_cirac.lifecycleproject">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
+        android:name=".AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name=".AppController">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".IntentexampleA"
-            android:label="Activity A">
-        </activity>
-        <activity android:name=".IntentexampleB"
-            android:label="Activity B">
-        </activity>
-        <activity android:name=".ScoreCounter"
-            android:label="Activity Score">
-        </activity>
-        <activity android:name=".ToastExample"
-            android:label="Pizza Order">
-        </activity>
-        <activity android:name=".NormalListViewEx"
-            android:label="list example">
-        </activity>
-        <activity android:name=".MenuExample">
-        </activity>
-        <activity android:name=".GridExample">
-        </activity>
-        <activity android:name=".ContextMenuExample">
-        </activity>
-        <activity android:name=".PopUpMenuExample">
-        </activity>
-        <activity android:name=".MainActivity2">
-        </activity>
-        <activity android:name=".RecycleActivity">
-        </activity>
-        <activity android:name=".ListViewActivity">
-        </activity>
-        <activity android:name=".FrameLayoutActivity">
-        </activity>
-        <activity android:name=".TableLayoutActivity">
-        </activity>
-        <activity android:name=".LinearLayoutActivity">
-        </activity>
-        <activity android:name=".RelaytiveLayoutActivity">
-        </activity>
-        <activity android:name=".GridViewActivity">
-        </activity>
-        <activity android:name=".ListViewActivity2">
-        </activity>
-        <activity android:name=".RecyclerViewActivity">
-        </activity>
-        <activity android:name=".MovieActivity"
-            android:configChanges="orientation|screenSize">
-        </activity>
-        <activity android:name=".DateTimePickerActivity">
-        </activity>
-        <activity android:name=".PreferenceActivity">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".IntentexampleA"
+            android:label="Activity A" />
+        <activity
+            android:name=".IntentexampleB"
+            android:label="Activity B" />
+        <activity
+            android:name=".ScoreCounter"
+            android:label="Activity Score" />
+        <activity
+            android:name=".ToastExample"
+            android:label="Pizza Order" />
+        <activity
+            android:name=".NormalListViewEx"
+            android:label="list example" />
+        <activity android:name=".MenuExample" />
+        <activity android:name=".GridExample" />
+        <activity android:name=".ContextMenuExample" />
+        <activity android:name=".PopUpMenuExample" />
+        <activity android:name=".MainActivity2" />
+        <activity android:name=".RecycleActivity" />
+        <activity android:name=".ListViewActivity" />
+        <activity android:name=".FrameLayoutActivity" />
+        <activity android:name=".TableLayoutActivity" />
+        <activity android:name=".LinearLayoutActivity" />
+        <activity android:name=".RelaytiveLayoutActivity" />
+        <activity android:name=".GridViewActivity" />
+        <activity android:name=".ListViewActivity2" />
+        <activity android:name=".RecyclerViewActivity" />
+        <activity
+            android:name=".MovieActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity android:name=".DateTimePickerActivity" />
+        <activity android:name=".PreferenceActivity" />
         <activity android:name=".MainPreferenceActivity">
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <!--<meta-data-->
+                <!--android:name="android.support.PARENT_ACTIVITY"-->
+                <!--android:value="com.example.ciccc_cirac.lifecycleproject.MainActivity" />-->
+        </activity>
+        <activity android:name=".ServiceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".NextActivity">
+        </activity>
+        <service
+            android:name="MyService"
+            android:enabled="true" />
     </application>
+
 </manifest>
