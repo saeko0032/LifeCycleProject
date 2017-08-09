@@ -64,16 +64,21 @@
                 <!--android:value="com.example.ciccc_cirac.lifecycleproject.MainActivity" />-->
         </activity>
         <activity android:name=".ServiceActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".NextActivity">
         </activity>
         <service
             android:name="MyService"
             android:enabled="true" />
+        <service
+            android:name=".SleepClass"
+            android:enabled="true" />
+        <activity android:name=".IntentServiceActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
