@@ -1,4 +1,4 @@
-package com.example.ciccc_cirac.lifecycleproject;
+package com.example.ciccc_cirac.lifecycleproject.listview;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.example.ciccc_cirac.lifecycleproject.R;
 
 /**
  * Created by saeko on 7/18/2017.

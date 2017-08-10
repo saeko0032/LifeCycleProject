@@ -1,4 +1,4 @@
-package com.example.ciccc_cirac.lifecycleproject;
+package com.example.ciccc_cirac.lifecycleproject.service;
 
 import android.app.IntentService;
 import android.content.Intent;

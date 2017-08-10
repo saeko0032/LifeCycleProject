@@ -38,24 +38,24 @@
         <activity android:name=".ContextMenuExample" />
         <activity android:name=".PopUpMenuExample" />
         <activity android:name=".MainActivity2" />
-        <activity android:name=".RecycleActivity" />
-        <activity android:name=".ListViewActivity" />
-        <activity android:name=".FrameLayoutActivity" />
-        <activity android:name=".TableLayoutActivity" />
-        <activity android:name=".LinearLayoutActivity" />
-        <activity android:name=".RelaytiveLayoutActivity" />
-        <activity android:name=".GridViewActivity" />
-        <activity android:name=".ListViewActivity2" />
-        <activity android:name=".RecyclerViewActivity" />
+        <activity android:name=".recycler.RecycleActivity" />
+        <activity android:name=".listview.ListViewActivity" />
+        <activity android:name=".listview.FrameLayoutActivity" />
+        <activity android:name=".listview.TableLayoutActivity" />
+        <activity android:name=".listview.LinearLayoutActivity" />
+        <activity android:name=".listview.RelaytiveLayoutActivity" />
+        <activity android:name=".listview.GridViewActivity" />
+        <activity android:name=".listview.ListViewActivity2" />
+        <activity android:name=".listview.RecyclerViewActivity" />
         <activity
             android:name=".movie.MovieActivity"
             android:configChanges="orientation|screenSize" />
-        <activity android:name=".DateTimePickerActivity" />
-        <activity android:name=".PreferenceActivity" />
-        <activity android:name=".MainPreferenceActivity">
+        <activity android:name=".picker.DateTimePickerActivity" />
+        <activity android:name=".preference.PreferenceActivity" />
+        <activity android:name=".preference.MainPreferenceActivity">
         </activity>
         <activity
-            android:name=".SettingsActivity"
+            android:name=".setting.SettingsActivity"
             android:label="@string/title_activity_settings"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -63,17 +63,17 @@
                 <!--android:name="android.support.PARENT_ACTIVITY"-->
                 <!--android:value="com.example.ciccc_cirac.lifecycleproject.MainActivity" />-->
         </activity>
-        <activity android:name=".ServiceActivity">
+        <activity android:name=".service.ServiceActivity">
         </activity>
-        <activity android:name=".NextActivity">
+        <activity android:name=".service.NextActivity">
         </activity>
         <service
-            android:name="MyService"
+            android:name=".service.MyService"
             android:enabled="true" />
         <service
-            android:name=".SleepClass"
+            android:name=".service.SleepClass"
             android:enabled="true" />
-        <activity android:name=".IntentServiceActivity">
+        <activity android:name=".service.IntentServiceActivity">
         </activity>
         <uses-permission android:name="android.permission.INTERNET"/>
         <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>

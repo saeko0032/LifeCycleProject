@@ -1,4 +1,4 @@
-package com.example.ciccc_cirac.lifecycleproject;
+package com.example.ciccc_cirac.lifecycleproject.picker;
 
 import android.app.Dialog;
 import android.app.DialogFragment;

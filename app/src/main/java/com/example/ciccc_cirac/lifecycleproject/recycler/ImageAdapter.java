@@ -1,4 +1,4 @@
-package com.example.ciccc_cirac.lifecycleproject;
+package com.example.ciccc_cirac.lifecycleproject.recycler;
 
 import android.content.Context;
 import android.view.View;
@@ -7,6 +7,8 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
+
+import com.example.ciccc_cirac.lifecycleproject.R;
 
 /**
  * Created by saeko on 7/12/2017.

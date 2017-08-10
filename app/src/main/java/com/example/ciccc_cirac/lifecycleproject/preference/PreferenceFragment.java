@@ -1,6 +1,8 @@
-package com.example.ciccc_cirac.lifecycleproject;
+package com.example.ciccc_cirac.lifecycleproject.preference;
 
 import android.os.Bundle;
+
+import com.example.ciccc_cirac.lifecycleproject.R;
 
 /**
  * Created by saeko on 7/28/2017.
