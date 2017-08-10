@@ -1,4 +1,4 @@
-package com.example.ciccc_cirac.lifecycleproject;
+package com.example.ciccc_cirac.lifecycleproject.movie;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -11,7 +11,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.ciccc_cirac.lifecycleproject.R;
 
 import java.util.List;
 

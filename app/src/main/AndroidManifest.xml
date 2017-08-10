@@ -48,7 +48,7 @@
         <activity android:name=".ListViewActivity2" />
         <activity android:name=".RecyclerViewActivity" />
         <activity
-            android:name=".MovieActivity"
+            android:name=".movie.MovieActivity"
             android:configChanges="orientation|screenSize" />
         <activity android:name=".DateTimePickerActivity" />
         <activity android:name=".PreferenceActivity" />
@@ -74,6 +74,10 @@
             android:name=".SleepClass"
             android:enabled="true" />
         <activity android:name=".IntentServiceActivity">
+        </activity>
+        <uses-permission android:name="android.permission.INTERNET"/>
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        <activity android:name=".thread.ThreadImageDlActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

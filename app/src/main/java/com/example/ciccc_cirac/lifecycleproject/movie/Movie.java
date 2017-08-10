@@ -1,4 +1,6 @@
-package com.example.ciccc_cirac.lifecycleproject;
+package com.example.ciccc_cirac.lifecycleproject.movie;
+
+import com.example.ciccc_cirac.lifecycleproject.R;
 
 import java.io.Serializable;
 

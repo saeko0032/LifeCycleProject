@@ -1,8 +1,7 @@
-package com.example.ciccc_cirac.lifecycleproject;
+package com.example.ciccc_cirac.lifecycleproject.movie;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,20 +9,21 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.example.ciccc_cirac.lifecycleproject.AppController;
+import com.example.ciccc_cirac.lifecycleproject.MainActivity;
+import com.example.ciccc_cirac.lifecycleproject.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
