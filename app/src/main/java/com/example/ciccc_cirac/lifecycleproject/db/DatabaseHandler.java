@@ -25,6 +25,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             "PRIMARY KEY AUTOINCREMENT," + KEY_NAME +
             " TEXT," + KEY_AUTHOR +
             " TEXT " + ");";
+    private static final String DROP_TABLE = "DROP TABLE IF EXIST";
     // create Constructor
     public DatabaseHandler(Context context) {
         // SQLiteOpenHelper(Context context, String name, CursorFactory factory, int version) {
@@ -44,7 +45,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // if i want to add changing
         // this method will be called
         // delete tb and create tb again
-        sqLiteDatabase.execSQL("DROP TABLE IF EXIST " + CREATE_TABLE_BOOKS);
+        sqLiteDatabase.execSQL(DROP_TABLE + CREATE_TABLE_BOOKS);
         this.onCreate(sqLiteDatabase);
 
     }
@@ -58,5 +59,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db1.insert(TABLE_NAME, null, value);
 
         db1.close();
+    }
+
+    public void delete() {
+
     }
 }
