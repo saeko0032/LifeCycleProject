@@ -28,9 +28,16 @@ public class DBActivity extends AppCompatActivity implements View.OnClickListene
     Button addBtn;
     Button updateBtn;
     Button deleteBtn;
+    Button sortByTitleBtn;
+    Button sortByAuthorBtn;
     ListView bookListview;
     BookAdapter bookAdapter;
     List<Book> bookList;
+    static int selectedBookID;
+    static int selectedOrderType;
+    public static final int TYPE_WITHOUT_SORT = 0;
+    public static final int TYPE_ORDER_BY_TITLE = 1;
+    public static final int TYPE_ORDER_BY_AUTHOR = 2;
 
     /**
      * set xml file data and update all db data and set it for the adapter
@@ -48,16 +55,22 @@ public class DBActivity extends AppCompatActivity implements View.OnClickListene
         addBtn = (Button) findViewById(R.id.db_add);
         updateBtn = (Button) findViewById(R.id.db_update);
         deleteBtn = (Button) findViewById(R.id.db_delete);
+        sortByTitleBtn = (Button) findViewById(R.id.db_sort_title);
+        sortByAuthorBtn = (Button) findViewById(R.id.db_sort_author);
         bookListview = (ListView) findViewById(R.id.db_books_list);
 
         // set onClick event for each item
         addBtn.setOnClickListener(this);
         updateBtn.setOnClickListener(this);
         deleteBtn.setOnClickListener(this);
+        sortByTitleBtn.setOnClickListener(this);
+        sortByAuthorBtn.setOnClickListener(this);
         bookListview.setOnItemClickListener(this);
 
+        selectedOrderType = TYPE_WITHOUT_SORT;
+
         // update latest data from db and set it for the adapter
-        updateData();
+        updateData(TYPE_WITHOUT_SORT);
     }
 
     /**
@@ -66,8 +79,10 @@ public class DBActivity extends AppCompatActivity implements View.OnClickListene
      * (3) give list for adapter
      * (4) set adapter for ListView
      */
-    public void updateData() {
-        bookList = db.getAllBooks();
+    public void updateData(int type) {
+        //selectedOrderType = type;
+        bookList = db.getAllBooks(type);
+
         List<Integer> idList = new ArrayList<>();
         List<String> titleList = new ArrayList<>();
         List<String> authorList = new ArrayList<>();
@@ -77,8 +92,9 @@ public class DBActivity extends AppCompatActivity implements View.OnClickListene
             titleList.add(i, bookList.get(i).getTitle());
             authorList.add(i, bookList.get(i).getAuthor());
         }
-
-        bookAdapter = new BookAdapter(this, idList, titleList, authorList);
+        if (bookAdapter == null) {
+            bookAdapter = new BookAdapter(this, idList, titleList, authorList);
+        }
         bookListview.setAdapter(bookAdapter);
     }
 
@@ -91,12 +107,37 @@ public class DBActivity extends AppCompatActivity implements View.OnClickListene
         switch (view.getId()) {
             case R.id.db_add:
                 db.addBook(new Book(title.getText().toString(), author.getText().toString()));
-                updateData();
+                updateData(TYPE_WITHOUT_SORT);
                 break;
             case R.id.db_update:
+                Book tmpBook1 = new Book();
+                tmpBook1.setId(selectedBookID);
+                // we want to get the last(modified) value
+                tmpBook1.setTitle(title.getText().toString());
+                tmpBook1.setAuthor(author.getText().toString());
+                // update selected book object from db
+                db.update(tmpBook1);
+                updateData(selectedOrderType);
                 break;
             case R.id.db_delete:
-                db.delete();
+                Book tmpBook2 = new Book();
+                tmpBook2.setId(selectedBookID);
+                // we want to get the last(modified) value
+                tmpBook2.setTitle(title.getText().toString());
+                tmpBook2.setAuthor(author.getText().toString());
+                // delete selected book object from db
+                db.delete(tmpBook2);
+                bookList
+                //bookAdapter.remove(selectedBookID);
+                //updateData(selectedOrderType);
+                break;
+            case R.id.db_sort_title:
+                selectedOrderType = TYPE_ORDER_BY_TITLE;
+                updateData(TYPE_ORDER_BY_TITLE);
+                break;
+            case R.id.db_sort_author:
+                selectedOrderType = TYPE_ORDER_BY_AUTHOR;
+                updateData(TYPE_ORDER_BY_AUTHOR);
                 break;
         }
     }
@@ -111,6 +152,8 @@ public class DBActivity extends AppCompatActivity implements View.OnClickListene
      */
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+        selectedBookID = bookList.get(position).getId();
         // get view from current view
         TextView titleTextView = (TextView)view.findViewById(R.id.db_book_titl_list);
         String titleString = titleTextView.getText().toString();
