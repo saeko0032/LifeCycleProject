@@ -4,7 +4,6 @@ package com.example.ciccc_cirac.lifecycleproject.db;
  * Book Model Object
  * @author saeko
  */
-
 public class Book {
     private int id;
     private String title;

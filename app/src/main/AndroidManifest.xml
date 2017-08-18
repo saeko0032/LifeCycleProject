@@ -5,7 +5,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
 
     <application
         android:name=".AppController"
@@ -34,74 +36,59 @@
         <activity
             android:name=".NormalListViewEx"
             android:label="list example" />
-        <activity
-            android:name=".MenuExample" />
-        <activity
-            android:name=".GridExample" />
-        <activity
-            android:name=".ContextMenuExample" />
-        <activity
-            android:name=".PopUpMenuExample" />
-        <activity
-            android:name=".MainActivity2" />
-        <activity
-            android:name=".recycler.RecycleActivity" />
-        <activity
-            android:name=".listview.ListViewActivity" />
-        <activity
-            android:name=".listview.FrameLayoutActivity" />
-        <activity
-            android:name=".listview.TableLayoutActivity" />
-        <activity
-            android:name=".listview.LinearLayoutActivity" />
-        <activity
-            android:name=".listview.RelaytiveLayoutActivity" />
-        <activity
-            android:name=".listview.GridViewActivity" />
-        <activity
-            android:name=".listview.ListViewActivity2" />
-        <activity
-            android:name=".listview.RecyclerViewActivity" />
+        <activity android:name=".MenuExample" />
+        <activity android:name=".GridExample" />
+        <activity android:name=".ContextMenuExample" />
+        <activity android:name=".PopUpMenuExample" />
+        <activity android:name=".MainActivity2" />
+        <activity android:name=".recycler.RecycleActivity" />
+        <activity android:name=".listview.ListViewActivity" />
+        <activity android:name=".listview.FrameLayoutActivity" />
+        <activity android:name=".listview.TableLayoutActivity" />
+        <activity android:name=".listview.LinearLayoutActivity" />
+        <activity android:name=".listview.RelaytiveLayoutActivity" />
+        <activity android:name=".listview.GridViewActivity" />
+        <activity android:name=".listview.ListViewActivity2" />
+        <activity android:name=".listview.RecyclerViewActivity" />
         <activity
             android:name=".movie.MovieActivity"
             android:configChanges="orientation|screenSize" />
-        <activity
-            android:name=".picker.DateTimePickerActivity" />
-        <activity
-            android:name=".preference.PreferenceActivity" />
-        <activity
-            android:name=".preference.MainPreferenceActivity" />
+        <activity android:name=".picker.DateTimePickerActivity" />
+        <activity android:name=".preference.PreferenceActivity" />
+        <activity android:name=".preference.MainPreferenceActivity" />
         <activity
             android:name=".setting.SettingsActivity"
             android:label="@string/title_activity_settings"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".service.ServiceActivity" />
-        <activity
-            android:name=".service.NextActivity" />
+        <activity android:name=".service.ServiceActivity" />
+        <activity android:name=".service.NextActivity" />
+
         <service
             android:name=".service.MyService"
             android:enabled="true" />
         <service
             android:name=".service.SleepClass"
             android:enabled="true" />
-        <activity
-            android:name=".service.IntentServiceActivity" />
-        <activity
-            android:name=".thread.ThreadImageDlActivity" />
-        <activity android:name=".broadcast.BroadcastActivity">
-        </activity>
+
+        <activity android:name=".service.IntentServiceActivity" />
+        <activity android:name=".thread.ThreadImageDlActivity" />
+        <activity android:name=".broadcast.BroadcastActivity"></activity>
+
         <receiver android:name=".broadcast.BroadcastReceiveDemo">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
+
         <activity android:name=".db.DBActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ContactDetails"></activity>
     </application>
+
 </manifest>
