@@ -1,7 +1,9 @@
-package com.example.ciccc_cirac.lifecycleproject;
+package com.example.ciccc_cirac.lifecycleproject.contact;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.ciccc_cirac.lifecycleproject.R;
 
 public class ContactDetails extends AppCompatActivity {
 
