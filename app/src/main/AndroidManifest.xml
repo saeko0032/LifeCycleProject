@@ -97,8 +97,7 @@
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
-        <activity android:name=".db.DBActivity" />
-        <activity android:name=".databinding.ActivityDataBindingDemo">
+        <activity android:name=".db.DBActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

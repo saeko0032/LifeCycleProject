@@ -36,4 +36,15 @@
         <item>https://saeko0032.github.io/img/saeko.png</item>
         <item>https://saeko0032.github.io/img/skill1.png</item>
     </string-array>
+
+    <string-array name="words">
+        <item>Android</item>
+        <item>Activity</item>
+        <item>ContentProvider</item>
+        <item>ContentResolver</item>
+    </string-array>
+
+    <string name="content">There is never better time
+    to drink water when you know
+    your phone is charging. Drink up!!!</string>
 </resources>
