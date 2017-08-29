@@ -21,6 +21,6 @@ public class NotificationDemo extends AppCompatActivity {
 
     public void testNotification(View view)
     {
-        NotificationUtils.remindUser(this);
+        NotificationUtils.reminderUser(this);
     }
 }
