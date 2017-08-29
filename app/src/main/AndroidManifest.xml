@@ -84,8 +84,7 @@
         <activity android:name=".db.DBActivity">
         </activity>
         <activity android:name=".contact.ContactDetails"></activity>
-        <activity android:name=".notification.NotificationDemo" />
-        <activity android:name=".facebook.FacebookDemoActivity">
+        <activity android:name=".notification.NotificationDemo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
