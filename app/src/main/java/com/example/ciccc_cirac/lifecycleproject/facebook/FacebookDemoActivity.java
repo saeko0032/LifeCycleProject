@@ -1,4 +1,6 @@
 package com.example.ciccc_cirac.lifecycleproject.facebook;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 
 import android.content.Intent;
 import android.net.Uri;

@@ -47,4 +47,6 @@
     <string name="content">There is never better time
     to drink water when you know
     your phone is charging. Drink up!!!</string>
+    <string name="facebook_app_id">114070759291462</string>
+    <string name="fb_login_protocol_scheme">fb114070759291462</string>
 </resources>
