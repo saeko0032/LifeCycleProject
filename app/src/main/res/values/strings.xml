@@ -12,6 +12,8 @@
         <item>Project</item>
         <item>Links</item>
     </string-array>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
     <string name="action_refresh">Refresh</string>
     <string name="btn_clear">Clear All</string>
     <string name="btn_select">Select All</string>
@@ -49,4 +51,5 @@
     your phone is charging. Drink up!!!</string>
     <string name="facebook_app_id">114070759291462</string>
     <string name="fb_login_protocol_scheme">fb114070759291462</string>
+
 </resources>
